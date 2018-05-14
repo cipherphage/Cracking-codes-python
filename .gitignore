@@ -3,3 +3,4 @@ ccodesvenv/
 p3test.py
 *.pyc
 __pycache__/
+.vscode/

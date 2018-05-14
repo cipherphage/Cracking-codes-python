@@ -5,6 +5,10 @@
 - reverse cipher (reverse_cipher.py)
 - caesar cipher (caesar_cipher.py)
 
+## Hacks
+
+- caesar cipher brute force (caesar_brute_force.py)
+
 ## Notes and Important Warnings
 
 - [Cracking Codes examples are under a BSD License.][1]
