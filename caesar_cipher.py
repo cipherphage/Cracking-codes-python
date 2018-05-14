@@ -12,10 +12,13 @@ key = 13
 mode = input('Type e for encrypt or d for decrypt: ')
 
 # every possible symbol that can be enc:
-SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.,'
+SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/'
 
 # store the enc/dec message:
 translated = ''
+
+# store unenc/undec symbols
+unaccepted = ''
 
 # main caesar cipher algorithm
 for symbol in message:
@@ -38,14 +41,17 @@ for symbol in message:
 
         translated = translated + SYMBOLS[translatedIndex]
     else:
-        # notify user of non-encrypted/decrypted symbols
-        print('Warning: the symbol ' + symbol + ' is left untouched by this cipher.')
+        # append non-encrypted/decrypted symbols for warning message
+        unaccepted = unaccepted + symbol
 
-        # append the raw symbol
+        # append the raw symbol to the message
         translated = translated + symbol
 
 # output the result
-print('The following result has also been copied to your clipboard: ')
+if len(unaccepted) > 0:
+    print('* * * * Warning * * * * \nThese symbols were untouched by the Caesar Cipher: ' + unaccepted + '\n* * * * * * * * * * * *')
+
+print('The following result has been copied to your clipboard: ')
 print(translated)
 pyperclip.copy(translated)
 
