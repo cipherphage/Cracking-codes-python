@@ -59,7 +59,7 @@ for key in range(len(SYMBOLS)):
     # count the iteration afterward
     count += 1
 
-# afterward all the user to choose to copy one of the results
+# afterward ask the user to choose to copy one of the results
 indexToCopy = input('Type the key of the message you\'d like to copy to your clipboard: ')
 messageToCopy = results[int(indexToCopy)]
 print('Message with key ' + indexToCopy + ' has been copied to your clipboard:')
