@@ -1,3 +1,5 @@
 ccodesvenv/
 .DS_Store
 p3test.py
+*.pyc
+__pycache__/
