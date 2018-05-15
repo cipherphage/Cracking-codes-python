@@ -1,7 +1,6 @@
 # transposition cipher
 
 import pyperclip
-import secrets
 import cipherrandom
 
 
