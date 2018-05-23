@@ -9,6 +9,7 @@
 ## Hacks
 
 - caesar cipher brute force (caesar_brute_force.py)
+- transposition cipher brute force (transposition_brute_force.py)
 
 ## Utilities
 
