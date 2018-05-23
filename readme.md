@@ -21,6 +21,10 @@
     - On some modern and up-to-date OSes this randomness is cryptographically secure.
     - That does not mean the cipher is cryptographically secure.
 
+## Tests
+
+- transposition encrypt/decrypt test (transposition_test.py)
+
 ## Notes and Important Warnings
 
 - I have modified, sometimes heavily, the examples from the book.
