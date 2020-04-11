@@ -1,5 +1,5 @@
-# collection of random number utilities
-# written by j3py
+# collection of random number helpers
+# written by cp
 
 import secrets
 
@@ -19,6 +19,6 @@ def getRandTransInt(length):
 
     # make sure num isn't 0 or 1
     while num < 2:
-        num = secrets.randbelow(length)
+        num = getRandInt(length)
 
     return num
