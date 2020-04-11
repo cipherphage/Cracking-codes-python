@@ -34,6 +34,6 @@
     - It is a security risk due to the fact that any program could use it to access your clipboard.
     - All of the scripts can be used without the pyperclip module by simply commenting it out in each script.
 - Python 3 is used through-out.
-- THE CIPHERS HERE ARE NOT CRYPTOGRAPHICALLY SECURE.  DON'T USE THEM.  THIS IS FOR LEARNING AND FUN, DUDE, SRSLY.
+- THE CIPHERS HERE ARE NOT CRYPTOGRAPHICALLY SECURE.  DON'T USE THEM.  THIS IS FOR LEARNING AND FUN.
 
 [1]:https://www.nostarch.com/crackingcodes/

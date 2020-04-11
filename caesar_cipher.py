@@ -24,7 +24,7 @@ def main():
 
         # check key is legit
         if key < 0 or key >= symLength:
-            print('Your key must be between 0 and ' + (symlength - 1))
+            print('Your key must be between 0 and ' + (symLength - 1))
             return main()
 
     # store the enc/dec message:
@@ -72,4 +72,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
