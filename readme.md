@@ -35,7 +35,7 @@
     - not realising that there could be a problem, they have copied code (or learned techniques) from websites which don't offer best practises.
   
   The first hit when searching for "python how to generate passwords" on Google is a tutorial that uses the default functions from the random module. Although it is not intended for use in web applications, it is likely that similar techniques find themselves used in that situation. The second hit is to a StackOverflow question about generating passwords. Most of the answers given, including the accepted one, use the default functions. When one user warned that the default could be easily compromised, they were told "I think you worry too much."
-- Read PEP-506 here: [https://www.python.org/dev/peps/pep-0506/][2]
+- Read PEP-506 here: [https://www.python.org/dev/peps/pep-0506/][2]. It specifies the new secrets module which was added to Python in verion 3.6.  The secrets module is what should be used when cryptographically secure pseudo random numbers are required.
 - I have modified, sometimes heavily, the examples from the book.
 - [Original Cracking Codes examples are under a BSD License.][1]
 - pyperclip.py is a utility module for interfacing with an OS's clipboard.
