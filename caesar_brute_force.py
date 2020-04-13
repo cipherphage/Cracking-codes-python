@@ -46,7 +46,7 @@ for key in range(len(SYMBOLS)):
     # warn of undecrypted symbols
     if count == 0:
         if len(unaccepted) > 0:
-            print('* * * * Warning * * * * \nThese symbols were not decrypted: ' + unaccepted + '\n* * * * * * * * * * * *')
+            print(f'* * * * Warning * * * * \nThese symbols were not decrypted: {unaccepted}\n* * * * * * * * * * * *')
 
     # prettify the number for clarity
     if len(str(count)) == 1:
@@ -62,7 +62,7 @@ for key in range(len(SYMBOLS)):
 # afterward ask the user to choose to copy one of the results
 indexToCopy = input('Type the key of the message you\'d like to copy to your clipboard: ')
 messageToCopy = results[int(indexToCopy)]
-print('Message with key ' + indexToCopy + ' has been copied to your clipboard:')
+print(f'Message with key {indexToCopy} has been copied to your clipboard:')
 print(messageToCopy)
 pyperclip.copy(messageToCopy)
 

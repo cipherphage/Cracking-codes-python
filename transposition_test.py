@@ -24,11 +24,11 @@ def main():
 
             # if results don't match then display error and quit
             if message != decrypted:
-                print('%s is not the correct key for message: %s.' % (key, message))
-                print('Decrypted as: ' + decrypted)
+                print(f'{key} is not the correct key for message: {message}.')
+                print(f'Decrypted as: {decrypted}')
                 sys.exit()
 
-            print('Test #%s passed with key %s: "%s..."' % (i+1, key, message[:50]))
+            print(f'Test #{i+1} passed with key {key}: "{message[:50]}..."')
 
 
 if __name__ == '__main__':

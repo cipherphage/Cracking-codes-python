@@ -14,7 +14,7 @@ def main():
         userChoice = False
         print('You chose decryption.')
     else:
-        print('Error: unknown choice ' + userChoice + '.')
+        print(f'Error: unknown choice: {userChoice}.')
         main()
 
     myMessage = input('Enter message: ')
@@ -42,9 +42,9 @@ def copier(messages):
         copyMessage = messages[int(copyMessageInput) - 2]
         if (copyMessage):
             pyperclip.copy(copyMessage)
-            print('Your decrypted message at key ' + copyMessageInput + ' has been copied to your clipboard.')
+            print(f'Your decrypted message at key {copyMessageInput} has been copied to your clipboard.')
         else:
-            print(copyMessageInput + ' is an invalid key.  Please try again.')
+            print(f'{copyMessageInput} is an invalid key.  Please try again.')
             copier(messages)
     else:
         pyperclip.copy(messages)

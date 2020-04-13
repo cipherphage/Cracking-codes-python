@@ -18,9 +18,9 @@ def main():
     ciphertext = encryptMessage(myKey, myMessage, msgLength)
 
     # print key
-    print('Your key is: ' + str(myKey))
+    print(f'Your key is: {str(myKey)}')
     # print encrypted string with | at end to indicate end
-    print('Your encrypted message is: ' + ciphertext + '|')
+    print(f'Your encrypted message is: {ciphertext} |')
     pyperclip.copy(ciphertext)
 
 

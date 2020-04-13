@@ -24,7 +24,7 @@ def main():
 
         # check key is legit
         if key < 0 or key >= symLength:
-            print('Your key must be between 0 and ' + (symLength - 1))
+            print(f'Your key must be between 0 and {symLength - 1}')
             return main()
 
     # store the enc/dec message:
@@ -44,7 +44,7 @@ def main():
             elif (mode == 'd' or mode == 'D'):
                 translatedIndex = symbolIndex - key
             else:
-                print('Mode ' + mode + ' not recognized.  Must be the letter e or the letter d, case insensitive.')
+                print(f'Mode {mode} not recognized.  Must be the letter e or the letter d, case insensitive.')
 
             # handle wraparound
             if translatedIndex >= len(SYMBOLS):
@@ -62,9 +62,9 @@ def main():
 
     # output the result
     if len(unaccepted) > 0:
-        print('* * * * Warning * * * * \nThese symbols were untouched by the Caesar Cipher: ' + unaccepted + '\n* * * * * * * * * * * *')
+        print(f'* * * * Warning * * * * \nThese symbols were untouched by the Caesar Cipher: {unaccepted}\n* * * * * * * * * * * *')
 
-    print('Your key is: ' + str(key))
+    print(f'Your key is: {str(key)}')
     print('The following result has been copied to your clipboard: ')
     print(translated)
     pyperclip.copy(translated)
