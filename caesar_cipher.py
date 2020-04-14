@@ -3,7 +3,7 @@
 # 3rd party modules
 import pyperclip
 # local modules
-import cipherrandom
+import cipher_random, cipher_main
 
 
 def caesarCipher(mode, message):
@@ -13,18 +13,18 @@ def caesarCipher(mode, message):
 
     # check for random key
     if mode == 'e':
-        key = cipherrandom.getRandInt(symLength)
+        key = cipher_random.getRandInt(symLength)
     else:
         try:
             key = int(input('Input key to decrypt by: '))
         except ValueError:
             print('Key must be a number.  Please try again.')
-            return main()
+            return cipher_main.main()
 
         # check key is legit
         if key < 0 or key >= symLength:
             print(f'Your key must be between 0 and {symLength - 1}')
-            return main()
+            return cipher_main.main()
 
     # store the enc/dec message:
     translated = ''

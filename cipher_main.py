@@ -2,12 +2,9 @@
 # handles initial main menu and user input
 
 # local modules
-from reverse_cipher import reverseCipher
-from caesar_cipher import caesarCipher
-from caesar_brute_force import caesarBruteForce
-from transposition_cipher import transpositionCipher
-from transposition_brute_force import transpositionBruteForce
-# from transposition_file_cipher import transpositionCipherFile
+import reverse_cipher, caesar_cipher, caesar_brute_force, \
+    transposition_cipher, transposition_brute_force
+# import transposition_file_cipher import transpositionCipherFile
 
 def main():
     # main menu options
@@ -43,15 +40,15 @@ def main():
             return main()
     
     if choice == 'a':
-        reverseCipher(message)
+        reverse_cipher.reverseCipher(message)
     elif choice == 'b':
-        caesarCipher(mode, message)
+        caesar_cipher.caesarCipher(mode, message)
     elif choice == 'c':
-        caesarBruteForce(message)
+        caesar_brute_force.caesarBruteForce(message)
     elif choice == 'd':
-        transpositionCipher(mode, message)
+        transposition_cipher.transpositionCipher(mode, message)
     elif choice == 'e':
-        transpositionBruteForce(message)
+        transposition_brute_force.transpositionBruteForce(message)
     # elif choice == 'f':
     #   transpositionCipherFile()
 

@@ -5,7 +5,7 @@ import math
 # 3rd party modules
 import pyperclip
 # local modules
-import cipherrandom
+import cipher_random, cipher_main
 
 
 def transpositionCipher(mode, myMessage):
@@ -17,9 +17,9 @@ def transpositionCipher(mode, myMessage):
         # otherwise transposition won't happen mathematically
         if msgLength <= 7:
             print('Message length must be more than 7 characters!')
-            return main()
+            return cipher_main.main()
 
-        myKey = cipherrandom.getRandTransInt(msgLength)
+        myKey = cipher_random.getRandTransInt(msgLength)
         ciphertext = encryptMessage(myKey, myMessage, msgLength)
 
         # print key
@@ -34,12 +34,12 @@ def transpositionCipher(mode, myMessage):
             myKey = int(input('Enter key: '))
         except ValueError:
             print('Key must be a number.  Please try again.')
-            return main()
+            return cipher_main.main()
         
         # check key is legit
         if myKey < 0 or myKey >= msgLength:
             print(f'Your key must be between 0 and {msgLength - 1}')
-            return main()
+            return cipher_main.main()
 
         # get decrypted message
         decrypted = decryptMessage(myKey, myMessage)

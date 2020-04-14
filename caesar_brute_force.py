@@ -2,6 +2,8 @@
 
 # 3rd party modules
 import pyperclip
+# local modules
+import cipher_main
 
 def caesarBruteForce(message):
     SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/'
@@ -64,7 +66,7 @@ def caesarBruteForce(message):
         indexToCopy = int(input('Type the key of the message you\'d like to copy to your clipboard: '))
     except ValueError:
         print('Key must be a number.  Please try again.')
-        return main()
+        return cipher_main.main()
         
     messageToCopy = results[indexToCopy]
     print(f'Message with key {indexToCopy} has been copied to your clipboard:')

@@ -22,7 +22,7 @@
 
 - Clipboard module (pyperclip.py)
     - It was written by the author of [Cracking Codes with Python][1] and is not modified by me.
-- Random numbers utilizing Python 3's secrets module (cipherrandom.py)
+- Random numbers utilizing Python 3's secrets module (cipher_random.py)
     - I wrote these helper functions.
     - Secrets uses the most secure sources of randomness your OS provides.
     - On some modern and up-to-date OSes this randomness is cryptographically secure.

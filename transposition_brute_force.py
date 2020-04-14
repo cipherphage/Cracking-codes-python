@@ -5,7 +5,7 @@ import math
 # 3rd party modules
 import pyperclip
 # local modules 
-import transposition_cipher
+import transposition_cipher, cipher_main
 
 
 def transpositionBruteForce(myMessage):
@@ -22,7 +22,7 @@ def copier(messages):
         copyMessageInput = int(input('Enter key of message to copy: '))
     except ValueError:
         print('Key must be a number.  Please try again.')
-        return main()
+        return cipher_main.main()
         
     copyMessage = messages[copyMessageInput - 2]
     if (copyMessage):

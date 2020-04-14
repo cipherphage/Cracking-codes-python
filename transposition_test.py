@@ -3,7 +3,7 @@
 # built-in modules
 import random, sys
 # local modules
-import cipherrandom, transposition_cipher, transposition_brute_force
+import cipher_random, transposition_cipher, transposition_brute_force
 
 
 def main():
