@@ -1,26 +1,25 @@
 # Caesar Cipher
 
+# 3rd party modules
 import pyperclip
+# local modules
 import cipherrandom
 
 
-def main():
-    # the string to be encrypted/decrypted
-    message = input('Enter message: ')
-
-    # whether the program enc or dec
-    mode = input('Type e for encrypt or d for decrypt: ')
-
+def caesarCipher(mode, message):
     # every possible symbol that can be enc:
     SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/'
     symLength = len(SYMBOLS)
 
     # check for random key
-    if mode == 'e' or mode == 'E':
+    if mode == 'e':
         key = cipherrandom.getRandInt(symLength)
     else:
-        keyInput = input('Input key to decrypt by: ')
-        key = int(keyInput)
+        try:
+            key = int(input('Input key to decrypt by: '))
+        except ValueError:
+            print('Key must be a number.  Please try again.')
+            return main()
 
         # check key is legit
         if key < 0 or key >= symLength:
@@ -39,9 +38,9 @@ def main():
         if symbol in SYMBOLS:
             symbolIndex = SYMBOLS.find(symbol)
 
-            if (mode == 'e' or mode == 'E'):
+            if (mode == 'e'):
                 translatedIndex = symbolIndex + key
-            elif (mode == 'd' or mode == 'D'):
+            elif (mode == 'd'):
                 translatedIndex = symbolIndex - key
             else:
                 print(f'Mode {mode} not recognized.  Must be the letter e or the letter d, case insensitive.')
@@ -68,7 +67,3 @@ def main():
     print('The following result has been copied to your clipboard: ')
     print(translated)
     pyperclip.copy(translated)
-
-
-if __name__ == '__main__':
-    main()

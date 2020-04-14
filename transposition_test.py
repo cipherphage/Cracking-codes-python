@@ -1,8 +1,9 @@
 # transposition cipher test
 
+# built-in modules
 import random, sys
-import cipherrandom
-import transposition_cipher, transposition_brute_force
+# local modules
+import cipherrandom, transposition_cipher, transposition_brute_force
 
 
 def main():
@@ -20,7 +21,7 @@ def main():
         # check all possible keys for each message
         for key in range(2, int(len(message) / 2)):
             encrypted = transposition_cipher.encryptMessage(key, message, len(message))
-            decrypted = transposition_brute_force.decryptMessage(key, encrypted)
+            decrypted = transposition_cipher.decryptMessage(key, encrypted)
 
             # if results don't match then display error and quit
             if message != decrypted:
