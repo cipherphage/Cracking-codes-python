@@ -4,7 +4,7 @@
 
 - From the repo root run:  `python cipher_main.py`
 - You'll see the following prompt, the rest should be straight-forward:
-  ![cipher_main command prompt main menu](https://github.com/cipherphage/Cracking_codes_python/blob/master/cipher_main_main_menu.jpg?raw=true)
+  ![cipher_main command prompt main menu](/cipher_main_main_menu.jpg)
 - The tests are currently not in a testing framework so they are run on a per file basis.  For example,  `python transposition_test.py`
 
 ## Ciphers
