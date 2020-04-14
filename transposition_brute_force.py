@@ -27,7 +27,8 @@ def copier(messages):
     copyMessage = messages[copyMessageInput - 2]
     if (copyMessage):
         pyperclip.copy(copyMessage)
-        print(f'Your decrypted message at key {copyMessageInput} has been copied to your clipboard.')
+        print(f'Your decrypted message at key {copyMessageInput} has '
+            'been copied to your clipboard.')
     else:
         print(f'{copyMessageInput} is an invalid key.  Please try again.')
         copier(messages)

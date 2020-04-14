@@ -10,7 +10,9 @@ def main():
     random.seed(43)
 
     for i in range(19):
-        message = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/' * random.randint(2, 23)
+        message = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijk'
+            'lmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/' 
+        message = message * random.randint(2, 23)
 
         # convert message str to list
         message = list(message)
@@ -20,7 +22,8 @@ def main():
 
         # check all possible keys for each message
         for key in range(2, int(len(message) / 2)):
-            encrypted = transposition_cipher.encryptMessage(key, message, len(message))
+            encrypted = transposition_cipher.encryptMessage(key, message, \
+                len(message))
             decrypted = transposition_cipher.decryptMessage(key, encrypted)
 
             # if results don't match then display error and quit

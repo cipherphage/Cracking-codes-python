@@ -93,7 +93,8 @@ def decrypter(key, message):
         col += 1
 
         # if no more cols or at shaded box go back to first col
-        if (col == numOfCols) or (col == numOfCols - 1 and row >= numOfRows - numOfShadedBoxes):
+        if ((col == numOfCols) or 
+            (col == numOfCols - 1 and row >= numOfRows - numOfShadedBoxes)):
             col = 0
             row += 1
 

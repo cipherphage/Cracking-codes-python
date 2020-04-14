@@ -8,7 +8,8 @@ import cipher_random, cipher_main
 
 def caesarCipher(mode, message):
     # every possible symbol that can be enc:
-    SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/'
+    SYMBOLS = ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijk'
+        'lmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/')
     symLength = len(SYMBOLS)
 
     # check for random key
@@ -40,10 +41,8 @@ def caesarCipher(mode, message):
 
             if (mode == 'e'):
                 translatedIndex = symbolIndex + key
-            elif (mode == 'd'):
-                translatedIndex = symbolIndex - key
             else:
-                print(f'Mode {mode} not recognized.  Must be the letter e or the letter d, case insensitive.')
+                translatedIndex = symbolIndex - key
 
             # handle wraparound
             if translatedIndex >= len(SYMBOLS):
@@ -61,7 +60,8 @@ def caesarCipher(mode, message):
 
     # output the result
     if len(unaccepted) > 0:
-        print(f'* * * * Warning * * * * \nThese symbols were untouched by the Caesar Cipher: {unaccepted}\n* * * * * * * * * * * *')
+        print('Warning: These symbols were '
+            f'untouched by the Caesar Cipher: {unaccepted}')
 
     print(f'Your key is: {str(key)}')
     print('The following result has been copied to your clipboard: ')

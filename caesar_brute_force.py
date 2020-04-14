@@ -6,7 +6,8 @@ import pyperclip
 import cipher_main
 
 def caesarBruteForce(message):
-    SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/'
+    SYMBOLS = ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijk'
+        'lmnopqrstuvwxyz1234567890 !?.,`~@#$%^&*()_-+=[]{}|;:<>/')
 
     # store undec symbols
     unaccepted = ''
@@ -48,7 +49,8 @@ def caesarBruteForce(message):
         # warn of undecrypted symbols
         if count == 0:
             if len(unaccepted) > 0:
-                print(f'* * * * Warning * * * * \nThese symbols were not decrypted: {unaccepted}\n* * * * * * * * * * * *')
+                print('Warning: These symbols were not '
+                    f'decrypted: {unaccepted}')
 
         # prettify the number for clarity
         if len(str(count)) == 1:
@@ -63,13 +65,15 @@ def caesarBruteForce(message):
 
     # afterward ask the user to choose to copy one of the results
     try:
-        indexToCopy = int(input('Type the key of the message you\'d like to copy to your clipboard: '))
+        indexToCopy = int(input('Type the key of the message you\'d '
+            'like to copy to your clipboard: '))
     except ValueError:
         print('Key must be a number.  Please try again.')
         return cipher_main.main()
         
     messageToCopy = results[indexToCopy]
-    print(f'Message with key {indexToCopy} has been copied to your clipboard:')
+    print(f'Message with key {indexToCopy} has '
+        'been copied to your clipboard:')
     print(messageToCopy)
     pyperclip.copy(messageToCopy)
 
