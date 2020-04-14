@@ -29,7 +29,7 @@ def main():
                 print(f'Decrypted as: {decrypted}')
                 sys.exit()
 
-            print(f'Test #{i+1} passed with key {key}: "{message[:50]}..."')
+        print(f'Test #{i+1} passed on message: "{message[:50]}..."')
 
 
 if __name__ == '__main__':
