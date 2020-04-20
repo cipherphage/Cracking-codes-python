@@ -7,12 +7,32 @@ import transposition_cipher, transposition_brute_force, cipher_random, \
     cipher_main
 
 def transpositionCipherFile():
-    inputFilePath = input("Enter the path to the file to encrypt. \n "
+    inputPath = input("Enter the absolute path to the file to encrypt. \n "
         "Note: if you enter a path to a directory \n "
         "all of the directory's contents will be encrypted: ")
-    outputFilename = []
-    fileLength = 
-    key = cipher_random.getRandTransInt(fileLength)
 
+    # check file or dir exists
+    if os.path.exists(inputPath):
+        # handle dir
+        if os.path.isdir(inputPath):
+            directory = os.fsencode(inputPath)
+            # loop over files in dir
+            for file in os.listdir(directory):
+                tEncryptFile(file)
+        # handle file
+        else:
+            file = os.fsencode(inputPath)
+            tEncryptFile(file)
+    # if path doesn't exist offer chance to try again
+    else:
+        print("Path doesn't exist. Make sure it's an absolute path.")
+        input("Press Enter to try again...\n")
+        transpositionCipherFile()
 
-
+def tEncryptFile(file):
+    print(file)
+    # outputFilename = 
+    # fileLength = 
+    # key = cipher_random.getRandTransInt(fileLength)
+        
+        

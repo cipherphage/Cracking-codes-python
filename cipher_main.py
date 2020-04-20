@@ -4,11 +4,11 @@
 # local modules
 import reverse_cipher, caesar_cipher, caesar_brute_force, \
     transposition_cipher, transposition_brute_force
-# import transposition_file_cipher import transpositionCipherFile
+import transposition_file_cipher
 
 def main():
     # main menu options
-    options = ['a','b','c','d','e']
+    options = ['a','b','c','d','e','f']
     # main menu string
     menu = ('Ciphers:\n'
         'A) Reverse message cipher (encrypt/decrypt)\n'
@@ -16,7 +16,7 @@ def main():
         'C) Caesar message brute forcer\n'
         'D) Transposition message cipher (encrypt/decrypt)\n'
         'E) Transposition message brute forcer\n'
-        # 'F) Transposition file cipher (encrypt/decrypt)\n'  # not completed yet
+        'F) Transposition file cipher (encrypt/decrypt)\n'
         'Type the letter of the one you want:'
     )
 
@@ -26,6 +26,9 @@ def main():
     if choice not in options:
         print(f'Invalid choice: {choice}. Please try again.')
         return main()
+
+    if choice == 'f':
+        return transposition_file_cipher.transpositionCipherFile()
 
     # string to be encrypted/decrypted
     message = input('Enter message: ')
@@ -40,18 +43,15 @@ def main():
             return main()
     
     if choice == 'a':
-        reverse_cipher.reverseCipher(message)
+        return reverse_cipher.reverseCipher(message)
     elif choice == 'b':
-        caesar_cipher.caesarCipher(mode, message)
+        return caesar_cipher.caesarCipher(mode, message)
     elif choice == 'c':
-        caesar_brute_force.caesarBruteForce(message)
+        return caesar_brute_force.caesarBruteForce(message)
     elif choice == 'd':
-        transposition_cipher.transpositionCipher(mode, message)
+        return transposition_cipher.transpositionCipher(mode, message)
     elif choice == 'e':
-        transposition_brute_force.transpositionBruteForce(message)
-    # elif choice == 'f':
-    #   transpositionCipherFile()
-
+        return transposition_brute_force.transpositionBruteForce(message)
 
 if __name__ == '__main__':
     main()
